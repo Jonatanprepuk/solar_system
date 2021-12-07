@@ -320,7 +320,6 @@ function checkbox(){
     header.style.display = "none";
     div.style.display = "none";
     controls.maxDistance = 50;
-
   }
 }
 
