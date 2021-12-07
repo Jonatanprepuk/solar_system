@@ -269,6 +269,31 @@ ScrollOut({
 const allPlanets = ['sun', 'mercury', 'venus', 'earth', 'mars', 'astroid', 'jupiter', 'saturn', 'uranus', 'neptune', 'pluto'];
 const allPlanetsObj = [sun, mercury, venus, earth, mars, group, jupiter, saturn, uranus, neptune, pluto];
 
+// Click to remove function
+
+const raycaster = new THREE.Raycaster();
+const clickMouse = new THREE.Vector2();
+const moveMouse = new THREE.Vector2();
+
+window.addEventListener('click', event => {
+  clickMouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+	clickMouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+
+  raycaster.setFromCamera(clickMouse,camera);
+  const intersects = raycaster.intersectObjects( scene.children );
+
+  if(intersects.length > 0){
+    controls.target = intersects[0].object.position
+    controls.autoRotate = true;
+    controls.maxDistance = intersects[0].object.geometry.boundingSphere.radius * 2;
+    controls.minDistance = intersects[0].object.geometry.boundingSphere.radius;
+
+    var element = document.getElementById(intersects[0].object.name);
+
+    element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  }
+})
+
 // On / Off switch
 
 function checkbox(){
@@ -285,46 +310,19 @@ function checkbox(){
     }
     header.style.display = "block";
     div.style.display = "block";
-
+    
+    controls.target = sun.position;
   }else{
-    controls.autoRotateSpeed = -1;
 
     for(let i = 0; i < text.length; i++){
       text.item(i).style.display = "none";
     }
     header.style.display = "none";
     div.style.display = "none";
-    controls.maxDistance = 500;
+    controls.maxDistance = 50;
+
   }
 }
-
-// Click to remove function
-
-const raycaster = new THREE.Raycaster();
-const clickMouse = new THREE.Vector2();
-const moveMouse = new THREE.Vector2();
-
-window.addEventListener('click', event => {
-  clickMouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
-	clickMouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
-
-  raycaster.setFromCamera(clickMouse,camera);
-  const intersects = raycaster.intersectObjects( scene.children );
-
-
-  if(intersects.length > 0){
-    controls.target = intersects[0].object.position
-    controls.autoRotate = true;
-    controls.autoRotateSpeed = -3;
-    controls.maxDistance = intersects[0].object.geometry.boundingSphere.radius * 2;
-    controls.minDistance = intersects[0].object.geometry.boundingSphere.radius;
-
-    var element = document.getElementById(intersects[0].object.name);
-
-    element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
-
-  }
-})
 
 // Animation 
 var t = 0; 
