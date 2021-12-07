@@ -37,14 +37,14 @@ controls.autoRotate = true;
 controls.autoRotateSpeed = -1;
 
 // Background stars 
-const backgroundStars = new THREE.TextureLoader().load('./textures/background.jpg');
+const backgroundStars = new THREE.TextureLoader().load('https://i.ibb.co/VSWH891/background.jpg');
 scene.background = backgroundStars;
 
 //planets 
 const scale = 1.5;
 
 // Sun 
-const sunTexture = new THREE.TextureLoader().load('./textures/sunTexture.jpg');
+const sunTexture = new THREE.TextureLoader().load('https://i.ibb.co/XjK0hcW/sun-Texture.jpg');
 const sunRadius = 6.96
 
 const sun = new THREE.Mesh(
@@ -56,7 +56,7 @@ const sun = new THREE.Mesh(
 scene.add(sun);
 
 // Mercury 
-const mercuryTexture = new THREE.TextureLoader().load('./textures/mercuryTexture.jpg');
+const mercuryTexture = new THREE.TextureLoader().load('https://i.ibb.co/CJr9fcF/mercury-Texture.jpg');
 const mercury = new THREE.Mesh(
   new THREE.SphereGeometry(0.2440), //radie i km/10000km
   new THREE.MeshStandardMaterial({
@@ -72,7 +72,7 @@ const mercuryDistance = 5.79 //avstånd till solen (km) / 1 000 000
 
 
 // Venus
-const venusTexture = new THREE.TextureLoader().load('./textures/venusTexture.jpg');
+const venusTexture = new THREE.TextureLoader().load('https://i.ibb.co/cXjYwS2/venus-Texture.jpg');
 const venus = new THREE.Mesh(
   new THREE.SphereGeometry(0.6051), // radie i km / 10000km
   new THREE.MeshStandardMaterial({
@@ -86,7 +86,7 @@ const venusDay = 1/225;
 const venusDistance = 10.8;
 
 // Earth 
-const earhTexture = new THREE.TextureLoader().load('./textures/earthTexture.jpg');
+const earhTexture = new THREE.TextureLoader().load('https://i.ibb.co/XCb4WFg/earth-Texture.jpg');
 //const earthNormalMap = new THREE.TextureLoader().load('./textures/earthNormalMap.jpg'); FUNKAR INTE MED AMBIENT LIGHT 
 const earth = new THREE.Mesh(
   new THREE.SphereGeometry(0.6371),
@@ -102,7 +102,7 @@ const earthDay = .015;
 const earthDistance = 14.9;
 
 // Moon 
-const moonTexture = new THREE.TextureLoader().load('./textures/moonTexture.jpg');
+const moonTexture = new THREE.TextureLoader().load('https://i.ibb.co/FmbYVx8/moon-Texture.jpg');
 const moon = new THREE.Mesh(
   new THREE.SphereGeometry(0.1737),
   new THREE.MeshStandardMaterial({
@@ -114,7 +114,7 @@ const moonOrbit =  1.03/10;
 const moonDistance = 0.384 + 0.6371;
 
 // Mars
-const marsTexture = new THREE.TextureLoader().load('./textures/marsTexture.jpg');
+const marsTexture = new THREE.TextureLoader().load('https://i.ibb.co/0JCnpmY/mars-Texture.jpg');
 const mars = new THREE.Mesh(
   new THREE.SphereGeometry(0.339),
   new THREE.MeshStandardMaterial({
@@ -130,7 +130,7 @@ const marsDistance = 22.79;
 // Asteroid belt
 const group = new THREE.Group();
 function addAsteroid(){
-  const asteroidTexture = new THREE.TextureLoader().load('./textures/asteroidTexture.jpg');
+  const asteroidTexture = new THREE.TextureLoader().load('https://i.ibb.co/BrJm7Nv/asteroid-Texture.jpg');
   const asteroid = new THREE.Mesh(
   new THREE.DodecahedronGeometry(0.1),
   new THREE.MeshStandardMaterial({
@@ -168,7 +168,7 @@ const astCamOrbit = 20/1000;
 const astCAmDistance = 35;
 
 // Jupiter
-const jupiterTexture = new THREE.TextureLoader().load('./textures/jupiterTexture.jpg');
+const jupiterTexture = new THREE.TextureLoader().load('https://i.ibb.co/vYSZT5L/jupiter-Texture.jpg');
 const jupiter = new THREE.Mesh(
   new THREE.SphereGeometry(6.9),
   new THREE.MeshStandardMaterial({
@@ -182,7 +182,7 @@ const jupiterDay = 0.032; // 0.01/antalet dagar runt axel
 const jupiterDistance = 77.85 //avstånd till solen (km) / 1 000 000
 
 // Saturn 
-const saturnTexture = new THREE.TextureLoader().load('./textures/saturnTexture.jpg');
+const saturnTexture = new THREE.TextureLoader().load('https://i.ibb.co/cYTx9Qf/saturn-Texture.jpg');
 const saturn = new THREE.Mesh(
   new THREE.SphereGeometry(5.82),
   new THREE.MeshStandardMaterial({
@@ -191,7 +191,7 @@ const saturn = new THREE.Mesh(
 )
 
 // Saturn ring
-const saturnRingTexture = new TextureLoader().load('./textures/saturnRingTexture.jpg');
+const saturnRingTexture = new TextureLoader().load('https://i.ibb.co/ySKP56S/saturn-Ring-Texture.jpg');
 const saturnRing = new THREE.Mesh(
   new THREE.RingGeometry(6.69,10.09,32),
   new THREE.MeshStandardMaterial({
@@ -208,7 +208,7 @@ const saturnDay = 0.028; // 0.01/antalet dagar runt axel
 const saturnDistance = 143 //avstånd till solen (km) / 1 000 000
 
 // Uranus 
-const uranusTexture = new THREE.TextureLoader().load('./textures/uranusTexture.jpg');
+const uranusTexture = new THREE.TextureLoader().load('https://i.ibb.co/cxgTq2N/uranus-Texture.jpg');
 const uranus = new THREE.Mesh(
   new THREE.SphereGeometry(2.536),
   new THREE.MeshStandardMaterial({
@@ -222,7 +222,7 @@ const uranusDay = 0.018; // 0.01/antalet dagar runt axel
 const uranusDistance = 287 //avstånd till solen (km) / 1 000 000
 
 // Neptune 
-const neptuneTexture = new THREE.TextureLoader().load('./textures/neptuneTexture.jpg');
+const neptuneTexture = new THREE.TextureLoader().load('https://i.ibb.co/3h2QBpG/neptune-Texture.jpg');
 const neptune = new THREE.Mesh(
   new THREE.SphereGeometry(2.4622),
   new THREE.MeshStandardMaterial({
@@ -237,7 +237,7 @@ const neptuneDistance = 449.5 //avstånd till solen (km) / 1 000 000
 
 // Pluto 
 
-const plutoTexture = new THREE.TextureLoader().load('./textures/plutoTexture.png');
+const plutoTexture = new THREE.TextureLoader().load('https://i.ibb.co/p3QjQtv/pluto-Texture.png');
 const pluto = new THREE.Mesh(
   new THREE.SphereGeometry(0.1188),
   new THREE.MeshStandardMaterial({
